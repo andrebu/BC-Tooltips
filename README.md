@@ -57,7 +57,7 @@ OR
 
 ##Resources
 - [jQuery-UI: jQuery.Tooltip() Plugin](https://jqueryui.com/tooltip/)
-- []()
+- [.tooltip() is not a function](http://stackoverflow.com/questions/9394390/tooltip-is-not-a-function)
 - []()
 - []()
 
