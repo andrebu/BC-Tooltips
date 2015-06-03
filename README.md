@@ -58,6 +58,8 @@ OR
 ##Resources
 - [jQuery-UI: jQuery.Tooltip() Plugin](https://jqueryui.com/tooltip/)
 - [.tooltip() is not a function](http://stackoverflow.com/questions/9394390/tooltip-is-not-a-function)
+- [qTip2 jQuery Plugin](http://qtip2.com/guides)
+- [HTML Encoder](http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx)
 - []()
 - []()
 
