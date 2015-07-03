@@ -1,4 +1,4 @@
-<!--Panel.HoverTooltips%%--> 
+<!--Panel.HoverTooltips%%-->
 <link type="text/css" rel="stylesheet" href="%%ASSET_js/jquery.qtip.min.css%%" />
 <script type="text/javascript" src="%%ASSET_js/jquery.qtip.min.js%%"></script>
 <script type="text/javascript" src="%%ASSET_js/imagesloaded.pkg.min.js%%"></script>
@@ -75,10 +75,12 @@
 		background: transparent none no-repeat -100em -100em
 	}
 	.qtip-default {
+		color: #555;
 		border: 1px solid #39B54A;
 		background-color: #FFF;
-		box-shadow: 0px 0 5px 0 rgba(0,0,0,0.3);
-		color: #555
+		-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	}
 	.qtip-default .qtip-titlebar {
 		background-color: #FFEF93
@@ -124,15 +126,49 @@
 		display: inline-block;
 		visibility: visible
 	}
+	.qtip-clean {
+		padding: 1px;
+		background-color: #ffffff;
+		-webkit-background-clip: padding-box;
+		-moz-background-clip: padding;
+		background-clip: padding-box;
+		border: 1px solid #ccc;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	}
 </style>
 <script>
 	function initTooltips() {
 		$('.main [data-tooltip!=""]').each(function() {
-			$(this).qtip({content: {attr: "data-tooltip"},position: {my: $(this).data("tooltip-my"),at: $(this).data("tooltip-at")},show: {effect: function() {
-					$(this).fadeIn(150)
-				}},hide: {delay: 100,fixed: !0,effect: function() {
-					$(this).fadeOut(150)
-				}}})
+			$(this).qtip({
+				content: {
+					attr: "data-tooltip"
+				},
+				position: {
+					my: $(this).data("tooltip-my"),
+					at: $(this).data("tooltip-at")
+				},
+				show: {
+					effect: function() {
+						$(this).fadeIn(150)
+					}
+				},
+				hide: {
+					delay: 100,
+					fixed: !0,
+					effect: function() {
+						$(this).fadeOut(150)
+					}
+				},
+				style: {
+					classes: 'qtip-clean'
+				}
+			})
 		})/*
 , $("body").hasClass("template-collection") && $('#products [data-optiontip!=""]').each(function() {
 			$(this).qtip({content: {attr: "data-optiontip"},position: {target: "mouse",adjust: {x: 10,y: 10}},show: {effect: function() {
